@@ -268,6 +268,50 @@ footer .socials a:hover{background:var(--red);border-color:var(--red);color:#fff
 footer .copy{font-size:.78rem;color:#555}
 footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bottom:24px}
 
+/* ============================================================
+   FOTOS
+============================================================ */
+.hero-photo{
+  margin-top:44px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.5);
+  max-width:760px;
+}
+.hero-photo img{width:100%;height:auto;display:block}
+
+.about-photo{
+  margin:44px 0 8px;border-radius:12px;overflow:hidden;
+  border:3px solid #111;box-shadow:8px 8px 0 #111;
+}
+.about-photo img{width:100%;height:auto;display:block}
+
+/* hosts */
+.hosts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px}
+@media(max-width:640px){.hosts{grid-template-columns:1fr}}
+.host{border-radius:12px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.host img{width:100%;height:auto;display:block;aspect-ratio:3/2;object-fit:cover}
+.host .cap{
+  position:absolute;left:0;bottom:0;right:0;padding:22px 18px 14px;
+  background:linear-gradient(to top,rgba(0,0,0,.85),transparent);
+  font-family:'Anton';text-transform:uppercase;font-size:1.15rem;letter-spacing:.02em;color:#fff;
+}
+
+/* franja de fotos / galería tipo tira */
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media(max-width:640px){.photo-strip{grid-template-columns:1fr 1fr}}
+.photo-strip .cell{border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.photo-strip .cell img{width:100%;height:100%;display:block;aspect-ratio:1;object-fit:cover;transition:transform .4s ease}
+.photo-strip .cell:hover img{transform:scale(1.06)}
+
+/* banda full con imagen de fondo */
+.band{
+  position:relative;min-height:340px;display:flex;align-items:center;
+  background-size:cover;background-position:center;
+}
+.band::before{content:"";position:absolute;inset:0;background:rgba(10,10,10,.62)}
+.band .wrap{position:relative;z-index:2}
+.band h2{font-family:'Anton';text-transform:uppercase;font-size:clamp(2rem,5vw,3.4rem);color:#fff;line-height:1}
+.band p{color:#e0e0e0;max-width:520px;margin-top:14px;font-size:1.05rem}
+
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
@@ -305,6 +349,9 @@ footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bo
       <a href="#episodios" class="btn btn-primary">Escuchar ▸</a>
       <a href="#conecta" class="btn btn-ghost">Conectar con nosotros</a>
     </div>
+    <div class="hero-photo reveal">
+      <img src="duo-claqueta.jpg" alt="Pecadores Anónimos - los presentadores" loading="lazy" />
+    </div>
   </div>
 </section>
 
@@ -328,6 +375,9 @@ footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bo
       Somos dos amigos hablando con honestidad sobre la fe, las preguntas incómodas y la vida real
       de un joven cristiano hoy. Nada de respuestas de manual. Solo conversaciones que tengan sentido.
     </p>
+    <div class="about-photo reveal">
+      <img src="conversando.jpg" alt="Conversación honesta en el podcast" loading="lazy" />
+    </div>
     <div class="cols">
       <div class="col reveal">
         <span class="num">01</span>
@@ -345,6 +395,26 @@ footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bo
         <p>Cada tema lo pensamos antes de hablarlo. No llenamos tiempo por llenar: si lo decimos, es porque vale la pena escucharlo.</p>
       </div>
     </div>
+
+    <!-- Retratos de los dos hosts. Cambia los nombres por los suyos. -->
+    <div class="hosts">
+      <div class="host reveal">
+        <img src="host-maykel.jpg" alt="Presentador del podcast" loading="lazy" />
+        <div class="cap">Maykel</div>
+      </div>
+      <div class="host reveal">
+        <img src="host-isaul.jpg" alt="Presentador del podcast" loading="lazy" />
+        <div class="cap">Isaul</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== BANDA DE FOTO (fe / Biblia) ====================== -->
+<section class="band reveal" style="background-image:url('logo-biblia.jpg')">
+  <div class="wrap">
+    <h2>Conversaciones<br>con la Biblia abierta</h2>
+    <p>No venimos a predicar desde arriba. Venimos a buscar a Dios de verdad, con la Palabra en la mesa y las preguntas sobre la mesa también.</p>
   </div>
 </section>
 
@@ -386,6 +456,16 @@ footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bo
           <small>Aquí irá el video de YouTube. Pega el código “Insertar” para reproducirlo aquí mismo.</small>
         </div>
       </div>
+    </div>
+
+    <!-- Tira de fotos: detrás de cámaras / producción -->
+    <div class="photo-strip reveal">
+      <div class="cell"><img src="riendo.jpg" alt="Momento del podcast" loading="lazy" /></div>
+      <div class="cell"><img src="microfono.jpg" alt="Micrófono del estudio" loading="lazy" /></div>
+      <div class="cell"><img src="maykel-mic2.jpg" alt="Grabando el podcast" loading="lazy" /></div>
+      <div class="cell"><img src="edicion.jpg" alt="Edición del episodio" loading="lazy" /></div>
+      <div class="cell"><img src="claqueta.jpg" alt="Claqueta Pecadores Anónimos" loading="lazy" /></div>
+      <div class="cell"><img src="camara-detalle.jpg" alt="Cámara del set" loading="lazy" /></div>
     </div>
   </div>
 </section>
