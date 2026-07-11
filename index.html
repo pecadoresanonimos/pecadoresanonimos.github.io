@@ -210,6 +210,17 @@ header.nav{
 .embed-placeholder .marker{color:#fff;font-size:1.3rem}
 .embed-placeholder small{font-size:.78rem;max-width:280px}
 
+/* episodio destacado */
+.featured-ep{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.featured-tag{display:inline-block;background:var(--red);color:#fff;font-family:'Anton';text-transform:uppercase;font-size:.85rem;letter-spacing:.1em;padding:5px 14px;border-radius:4px;margin-bottom:12px}
+.featured-title{font-family:'Anton';text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;margin-bottom:10px}
+.featured-desc{color:#cfcfcf;max-width:560px;font-size:1.02rem}
+
+/* video responsive 16:9 */
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.spotify-embed{display:block}
+
 /* ============================================================
    REUNIONES
 ============================================================ */
@@ -426,35 +437,37 @@ footer .verse{font-family:'Permanent Marker';color:#444;font-size:1rem;margin-bo
       <h2 class="display">Episodios</h2>
     </div>
     <div class="platforms reveal">
-      <!-- Cambia estos enlaces por los de tus canales cuando los tengas -->
-      <a href="#" class="btn btn-dark" id="spotifyLink">▸ Spotify</a>
-      <a href="#" class="btn btn-ghost" id="youtubeLink">▸ YouTube</a>
+      <a href="https://open.spotify.com/episode/5aZjkkqpt48r3fl8AuCpof" target="_blank" rel="noopener" class="btn btn-dark" id="spotifyLink">▸ Escuchar en Spotify</a>
+      <a href="https://youtu.be/ycGGQ9fKb9g" target="_blank" rel="noopener" class="btn btn-ghost" id="youtubeLink">▸ Ver en YouTube</a>
+    </div>
+
+    <!-- EPISODIO DESTACADO -->
+    <div class="featured-ep reveal">
+      <div class="featured-tag">Episodio 1</div>
+      <h3 class="featured-title">Dios no tiene nietos</h3>
+      <p class="featured-desc">La fe no se hereda como un apellido. Se vive de primera mano. Arrancamos la primera conversación sin máscaras.</p>
     </div>
 
     <div class="embed-grid">
-      <!-- ============================================================
-           SPOTIFY: cuando tengas el podcast, copia el "Embed" de Spotify
-           (botón ⋯ → Compartir → Insertar) y pega el <iframe> aquí,
-           reemplazando todo el bloque .embed-placeholder de abajo.
-      ============================================================ -->
+      <!-- YOUTUBE: video real del episodio 1 -->
       <div class="embed-card reveal">
-        <h3><span class="dot"></span> En Spotify</h3>
-        <div class="embed-placeholder">
-          <span class="marker">Próximamente</span>
-          <small>Aquí irá el reproductor de Spotify. Pega el código “Insertar” de tu episodio para que suene directo en la página.</small>
+        <h3><span class="dot"></span> En YouTube</h3>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/ycGGQ9fKb9g"
+            title="Pecadores Anónimos - Episodio 1" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
 
-      <!-- ============================================================
-           YOUTUBE: copia el "Insertar" del video de YouTube
-           (Compartir → Insertar) y pega el <iframe> aquí.
-      ============================================================ -->
+      <!-- SPOTIFY: episodio real -->
       <div class="embed-card reveal">
-        <h3><span class="dot"></span> En YouTube</h3>
-        <div class="embed-placeholder">
-          <span class="marker">Próximamente</span>
-          <small>Aquí irá el video de YouTube. Pega el código “Insertar” para reproducirlo aquí mismo.</small>
-        </div>
+        <h3><span class="dot"></span> En Spotify</h3>
+        <iframe style="border-radius:12px" class="spotify-embed"
+          src="https://open.spotify.com/embed/episode/5aZjkkqpt48r3fl8AuCpof?utm_source=generator&theme=0"
+          width="100%" height="352" frameborder="0" allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
       </div>
     </div>
 
